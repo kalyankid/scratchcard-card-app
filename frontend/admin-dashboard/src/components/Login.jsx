@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import "./login.css";
+import "./Login.css";
 
 
 const API_URL = import.meta.env.VITE_API_URL;
