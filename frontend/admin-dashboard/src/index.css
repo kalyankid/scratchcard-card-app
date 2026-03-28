@@ -1,0 +1,463 @@
+/* Root theme */
+:root {
+  --primary: #4f46e5; /* Indigo */
+  --primary-dark: #4338ca;
+  --secondary: #10b981; /* Green */
+  --secondary-dark: #059669;
+  --danger: #ef4444; /* Red */
+  --danger-dark: #dc2626;
+  --bg: #f9fafb;
+  --bg-dark: #111827;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --white: #fff;
+  --border: #e5e7eb;
+  --sidebar-bg: #1e293b; /* Slate */
+  --sidebar-active: #334155;
+  --sidebar-text: #cbd5e1;
+  --navbar-bg: #fff;
+  --card-bg: #fff;
+  --radius: 10px;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Global */
+body, html, #root {
+  margin: 0;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Layout */
+.app-root {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+}
+
+.sidebar .brand {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sidebar .logo-circle {
+  background: var(--primary);
+  color: var(--white);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.nav-list {
+  flex: 1;
+}
+
+.nav-item {
+  width: 100%;
+  padding: 14px 20px;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: var(--sidebar-text);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background: var(--sidebar-active);
+}
+
+.nav-item.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.sidebar-footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  border-top: 1px solid var(--sidebar-active);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: var(--navbar-bg); */
+  padding: 10px 20px;
+  /* box-shadow: var(--shadow); */
+}
+
+.topbar-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-avatar {
+  background: var(--primary);
+  color: var(--white);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.profile-name {
+  font-weight: 500;
+}
+
+/* Content */
+.content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* Table */
+.table-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.users-table th {
+  background: var(--bg);
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.users-table tr:hover {
+  background: #f3f4f6;
+}
+
+/* Status colors */
+.status.approved {
+  color: var(--secondary-dark);
+  font-weight: 600;
+}
+
+.status.rejected {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.status.pending {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 2px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-approve {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.btn-reject {
+  background: var(--danger);
+  color: var(--white);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Dropdown */
+select {
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--white);
+}
+
+/* Sidebar Navigation */
+.nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main nav items */
+.nav-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  border: none;
+  background: transparent;
+  color: var(--sidebar-text);
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
+}
+
+.nav-item:hover {
+  background: var(--sidebar-active);
+  color: var(--white);
+  padding-left: 22px; /* slight shift for hover effect */
+}
+
+.nav-item.active {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+  border-left: 4px solid var(--secondary);
+}
+
+/* Arrow icon for collapsible groups */
+.arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.nav-item.open .arrow {
+  transform: rotate(90deg);
+}
+
+/* Sub-list container */
+.sub-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  margin-left: 8px;
+  border-left: 2px solid var(--sidebar-active);
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Sub items */
+.sub-item {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  color: var(--sidebar-text);
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
+}
+
+.sub-item:hover {
+  background: var(--sidebar-active);
+  color: var(--white);
+  padding-left: 22px;
+}
+
+.sub-item.active {
+  background: var(--primary-dark);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.btn-refresh {
+  display: flex;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.btn-refresh:hover {
+  background: #0056b3;
+}
+
+.btn-logout {
+  margin-left: 12px;
+  padding: 6px 12px;
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.btn-logout:hover {
+  background: #cc0000;
+}
+
+
+/* Hide mobile menu button on desktop */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Sidebar styles base */
+.sidebar {
+  width: 220px;
+  background-color: #222;
+  color: white;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Sidebar header with close button */
+.sidebar-header {
+  display: none;
+  padding: 0.5rem;
+  text-align: right;
+}
+
+/* Close button on mobile */
+.sidebar-close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main content area */
+.main {
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
+  padding: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  /* Sidebar hidden by default on mobile */
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    width: 70vw;
+    max-width: 300px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.5);
+  }
+
+  .sidebar.sidebar-visible {
+    transform: translateX(0);
+  }
+
+  .sidebar-header {
+    display: block;
+  }
+
+  /* When sidebar is open, prevent scrolling on body */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  /* Push main content to right when sidebar open */
+  .app-root.sidebar-open .main {
+    margin-left: 70vw;
+    max-width: 30vw;
+  }
+
+  /* On mobile, content full width if sidebar hidden */
+  .main {
+    margin-left: 0 !important;
+    max-width: 100%;
+  }
+
+  /* Tables scroll horizontally on mobile */
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

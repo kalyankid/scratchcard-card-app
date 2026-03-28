@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Scratch And Win",
+    "slug": "scratch-and-win",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/scratch-card-image.png",
+    "scheme": "userapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.subrahmanyam.scratchandwin"
+    },
+    "android": {
+      "package": "com.subrahmanyam.scratchandwin",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/scratch-card-image.png",
+        "backgroundColor": "#E6F4FE"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/scratch-card-image.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/scratch-card-image.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "81c24ad0-67b6-4142-ab1e-1bc653beddc9"
+      }
+    }
+  }
+}
